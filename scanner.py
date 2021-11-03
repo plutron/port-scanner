@@ -1,9 +1,9 @@
-import socket,sys,colorama
+import socket,sys
 from datetime import datetime
 
 #----------------------------------------------------
 
-ip_to_host = socket.gethostbyname(input(colorama.Fore.GREEN+"host : "))
+ip_to_host = socket.gethostbyname(input("host : "))
 p1 = True
 while p1:
     start_port = input("first port : ")
@@ -28,7 +28,6 @@ while p2:
         p2 = False
     else:
         print("sorry!! I don't undrestand!")
-print(colorama.Style.RESET_ALL)
 #----------------------------------------------------
 
 print("-"*60)
@@ -44,10 +43,10 @@ try:
         result = soct.connect_ex((ip_to_host,port))
 
         if result == 0:
-            print(colorama.Fore.BLACK+colorama.Back.GREEN+f"[+]   port {port}:    open")
+            print(f"[+]   port {port}:    open")
             open_ports.append(port)
         else : 
-            print(colorama.Fore.WHITE+colorama.Back.RED+f"[+]    port {port} :      close")
+            print(f"[+]    port {port} :      close")
 except KeyboardInterrupt : 
     print("have good time!!")
     sys.exit()
@@ -58,7 +57,6 @@ except socket.error:
 except :
     print("something id wrong!!")
 
-print(colorama.Style.RESET_ALL)
 print("-"*60,"\n\n")
 for p in open_ports:
     print(f"[{p}      opne]")
