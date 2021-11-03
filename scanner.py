@@ -69,3 +69,6 @@ time_2 = datetime.now()
 time_3 = time_2 - time_1
 
 print(f"time : {time_3}")
+
+input("you want close program? ")
+input("are you sure? ")
